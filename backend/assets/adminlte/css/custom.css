@@ -1,0 +1,11 @@
+*{
+    outline: 0!important;
+}
+.custom_btn{
+    font-size: 16px!important;
+    padding: 1px 12px!important;
+    cursor: pointer!important;
+}
+.fa{
+    font-size: 12px!important;
+}
