@@ -1,4 +1,5 @@
 @extends('admin.layout.admin_layout')
+@section('title', 'Brand')
 
 
 @section('content')

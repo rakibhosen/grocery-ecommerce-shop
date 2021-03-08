@@ -1,4 +1,5 @@
 @extends('frontend.layout.master')
+@section('title', 'User Profile')
  @section('content')
 <!-- page -->
 {!! Toastr::message() !!}
@@ -7,7 +8,7 @@
 	<div class="agile_inner_breadcrumb">
 		<div class="container">
 			<ul class="w3_short">
-				<li> <a href="index.html">Home</a> <i>|</i> </li>
+				<li> <a href="{{ route('ecommerce.index') }}">Home</a> <i>|</i> </li>
 				<li>User Dashboard</li>
 			</ul>
 		</div>
@@ -16,10 +17,10 @@
 <div class="banner-bootom-w3-agileits">
 	<div class="container">
 	<div class="row row align-items-center justify-content-center">
-			<div class="col-md-6 col-md-offset-3">
+			<div class="col-md-8 col-md-offset-2">
 				<ul class="nav nav-tabs">
 					<li class="active"><a data-toggle="tab" href="#home">Profile</a></li>
-					<li><a data-toggle="tab" href="#menu1">All Orders</a></li>
+					<li><a data-toggle="tab" href="#allorder">All Orders</a></li>
 					<li><a data-toggle="tab" href="#menu2">Settings</a></li>
 				</ul>
                 <div class="tab-content">
@@ -27,9 +28,8 @@
 	                 	@include('frontend.pages.user.partials.userInfo')
                     </div>
 
-					<div id="menu1" class="tab-pane fade">
-						<h3>Menu 1</h3>
-						<p>Some content in menu 1.</p>
+					<div id="allorder" class="tab-pane fade">
+						@include('frontend.pages.user.partials.allOrder')
 					</div>
 					<div id="menu2" class="tab-pane fade ">
 					

@@ -1,4 +1,5 @@
 @extends('frontend.layout.master')
+@section('title', 'Cart')
  @section('content')
 
 <div class="page-head_agile_info_w3l">

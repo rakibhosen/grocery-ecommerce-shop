@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\Cart;
 use App\Models\Order;
 use Brian2694\Toastr\Facades\Toastr;
+use Illuminate\Support\Facades\DB as FacadesDB;
 
 class OrderController extends Controller
 {
@@ -51,9 +52,11 @@ class OrderController extends Controller
         $data['phone']=$request->phone_no;
         $data['name']=$request->name;
         $data['email']=$request->email;
-        $latestOrder = DB::table('orders')->latest()->first();
+        $latestOrder =DB::table('orders')->latest('id')->first();
+ 
+ 
         if($latestOrder){
-            $data['order_number']='#'. str_pad($latestOrder->id + 1, 8, "0", STR_PAD_LEFT);
+            $data['order_number']='#'. str_pad($latestOrder->id+1, 8, "0", STR_PAD_LEFT);
         }else{
         $data['order_number']='#'. str_pad("0", 8, "0", STR_PAD_LEFT);
     }
@@ -63,7 +66,7 @@ class OrderController extends Controller
        ->where('order_id',NULL)
        ->get();
      
-       $order= Order::latest()->first();
+       $order= DB::table('orders')->latest('id')->first();;
  
         foreach($carts as $cart){
 
@@ -74,5 +77,12 @@ class OrderController extends Controller
         return redirect()->route('ecommerce.index');
 
         }
-    }
+
+public function OrderTrack(Request $request){
+    $track_order = Order::where('order_number',$request->order_number)->with('carts','user')->get();
+    return view('frontend.pages.orderTrack.orderDetails',compact('track_order'));
+}
+
+ }
+
 

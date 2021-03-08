@@ -1,4 +1,5 @@
 @extends('frontend.layout.master')
+@section('title', 'Products')
 @section('content')
 
 @include('frontend.partials.slider')

@@ -24,7 +24,7 @@
                                 </a>
                             </li>
                             <li class="">
-                                <a class="nav-stylehead" href="about.html">About Us</a>
+                                <a class="nav-stylehead" href="{{ route('about.us') }}">About Us</a>
                             </li>
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle nav-stylehead" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Kitchen
@@ -166,7 +166,7 @@
                                 </ul>
                             </li>
                             <li class="">
-                                <a class="nav-stylehead" href="contact.html">Contact</a>
+                                <a class="nav-stylehead" href="{{ route('contact.us') }}">Contact</a>
                             </li>
                         </ul>
                     </div>

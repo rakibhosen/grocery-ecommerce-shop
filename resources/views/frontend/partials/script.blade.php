@@ -204,12 +204,14 @@
 
 	  },
 	  success:function(response){
-		  console.log(response)
+	
 		  if(response.success){
-			toastr.success('Product added to your cart')
+		
 			$('#total_item').html(response.total_item);
+			console.log('total_item',response.total_item);
+			toastr.success('Product added to your cart');
 		  }else{
-			toastr.info('Please login first')
+			toastr.info('Please login first');
 		  }
 
 
@@ -256,6 +258,8 @@
 		}
 
 </script>
+
+
 {!! Toastr::message() !!}
 @yield('script')
 

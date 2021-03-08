@@ -1,5 +1,7 @@
 @extends('frontend.layout.master')
+@section('title', 'Checkout')
  @section('content')
+
 
 
  <div class="container">

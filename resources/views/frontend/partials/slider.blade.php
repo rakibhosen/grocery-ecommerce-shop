@@ -11,8 +11,8 @@
       <div class="item active">
         <img src="la.jpg" alt="Chania" style="height: 80vh;">
         <div class="carousel-caption">
-          <h3>Los Angeles</h3>
-          <p>LA is always so much fun!</p>
+          <h3>Grocery Shop</h3>
+          <p>Grocery Offer Zone Top Deals & Discounts</p>
         </div>
       </div>
   

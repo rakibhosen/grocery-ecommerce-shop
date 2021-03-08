@@ -17,11 +17,11 @@ class CreateProductsTable extends Migration
             $table->id();
             $table->string('product_name');
             $table->text('product_description');
-            $table->bigInteger('color_id')->nullable();
-            $table->bigInteger('size_id')->nullable();
-            $table->bigInteger('product_price');
+            $table->unsignedInteger('color_id')->nullable();
+            $table->unsignedInteger('size_id')->nullable();
+            $table->unsignedInteger('product_price');
             $table->boolean('product_stockout')->default(1);
-            $table->bigInteger('product_offer_price')->nullable();
+            $table->unsignedInteger('product_offer_price')->nullable();
             $table->boolean('product_hot_deal')->default(1);
             $table->boolean('product_buy_one_get_one')->default(0);
             $table->unsignedInteger('cat_id')->unsigned();

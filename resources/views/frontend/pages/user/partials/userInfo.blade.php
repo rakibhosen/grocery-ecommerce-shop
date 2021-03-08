@@ -2,7 +2,9 @@
 
 
 
-
+<div class="panel panel-default">
+    <div class="panel-heading">Profile Info</div>
+    <div class="panel-body">
 
         <div class="image" style="width:25%; margin:0 auto; margin-top:20px;margin-bottom:20px;">
              @php 
@@ -29,3 +31,5 @@
             </ul>
            
         </div>
+    </div>
+</div>

@@ -25,13 +25,17 @@ class Cart extends Model
  
  
      // total item
-     public static function totalItems(){
-         $carts = Cart::totalCarts();
-         $total_item =0;
- 
-         foreach($carts as $cart){
-             $total_item += $cart->qty;
-         }
-         return $total_item;
-     }
+    public static function totalItems(){
+        $carts = Cart::totalCarts();
+        $total_item =0;
+
+        foreach($carts as $cart){
+            $total_item += $cart->qty;
+        }
+        return $total_item;
+    }
+
+    public function orders(){
+        return $this->belongsTo('App\Models\Order');
+    }
 }

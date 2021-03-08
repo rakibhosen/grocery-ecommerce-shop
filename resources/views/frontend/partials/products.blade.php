@@ -32,7 +32,7 @@
                     </div>
                     <div class="item-info-product ">
                         <h4>
-                            <a href="single.html">{{ $product->product_name }}</a>
+                            <a href="{!! route('product.show',$product->product_slug) !!}">{{ $product->product_name }}</a>
                         </h4>
                         <div class="info-product-price">
                             <span class="item_price">${{ $product->product_price }}</span>

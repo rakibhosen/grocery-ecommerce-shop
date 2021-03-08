@@ -27,7 +27,7 @@
 							<span class="fa fa-map-marker" aria-hidden="true"></span> Shop Locator</a>
 					</li>
 					<li>
-						<a href="#" data-toggle="modal" data-target="#myModal1">
+						<a href="#" data-toggle="modal" data-target="#track_order">
 							<span class="fa fa-truck" aria-hidden="true"></span>Track Order</a>
 					</li>
 					<li>
@@ -114,6 +114,8 @@
 			<div class="clearfix"></div>
 		</div>
 	</div>
+	{{-- track order modal --}}
+	@include('frontend.pages.orderTrack.trackOrder')
 	<!-- shop locator (popup) -->
 	<!-- Button trigger modal(shop-locator) -->
 	<div id="small-dialog1" class="mfp-hide">

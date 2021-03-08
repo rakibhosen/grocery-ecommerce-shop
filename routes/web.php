@@ -13,14 +13,23 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+// all pages
+Route::get('/','Api\Frontend\PagesController@index')->name('ecommerce.index');
+Route::get('/contact-us','Api\Frontend\PagesController@contactPages')->name('contact.us');
+Route::get('/about-us','Api\Frontend\PagesController@aboutPages')->name('about.us');
+Route::get('/userprofile','Api\Auth\UserController@userProfile')->name('user.dashboard');
+Route::get('/ordertrack','Api\Frontend\OrderController@OrderTrack')->name('order.track');
+Route::get('/product/cart/checkout','Api\Frontend\PagesController@checkoutPages')->name('checkout.index');
+
+// all pages end
 
 
 
 // index page
-Route::get('/','Api\Frontend\PagesController@index')->name('ecommerce.index');
+
 Auth::routes();
 // userprofile
-Route::get('/userprofile','Api\Auth\UserController@userProfile')->name('user.dashboard');
+
 // user update
 Route::post('/userupdate/{id}','Api\Auth\UserController@userUpdate')->name('user.update');
 // single product show
@@ -33,8 +42,9 @@ Route::post('/cart/store','Api\Frontend\CartController@AddCart')->name('cart.sto
 Route::get('/product/cart/view','Api\Frontend\CartController@ShowAllCart')->name('cart.index');
 Route::post('/cart/item/delete/','Api\Frontend\CartController@RemoveCartItem')->name('cartitem.delete');
 // checkout
-Route::get('/product/cart/checkout','Api\Frontend\PagesController@CheckOut')->name('checkout.index');
+
 Route::post('/order/store','Api\Frontend\OrderController@OrderStore')->name('order.store');
+
 // Route::get('filterprice', 
 //       ['as' => 'price.filter',
 //       'uses' => 'PagesController@filterPrice']);

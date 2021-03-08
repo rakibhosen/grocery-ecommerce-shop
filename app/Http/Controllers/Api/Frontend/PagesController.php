@@ -4,25 +4,28 @@ namespace App\Http\Controllers\Api\Frontend;
 
 use App\Http\Controllers\Controller;
 use App\Models\Category;
+use App\Models\Order;
 use Illuminate\Http\Request;
 use DB;
+use Illuminate\Support\Facades\Auth;
 
 class PagesController extends Controller
 {
-    public function index(){
-        $products = DB::table('products')
-        ->join('categories','products.cat_id','categories.id')
-        ->join('subcategories','products.subcat_id','subcategories.id')
-        ->join('brands','products.brand_id','brands.id')
-        ->select('products.*','categories.category_name','subcategories.subcat_name','brands.brand_name')
-        ->paginate(9);
-        $categories =Category::With('subcategory')->orderBy('category_name','asc')->get();
-       
-        return view('frontend.index',compact('products','categories'));
+public function index(){
+    $products = DB::table('products')
+    ->join('categories','products.cat_id','categories.id')
+    ->join('subcategories','products.subcat_id','subcategories.id')
+    ->join('brands','products.brand_id','brands.id')
+    ->select('products.*','categories.category_name','subcategories.subcat_name','brands.brand_name')
+    ->paginate(9);
+    $categories =Category::With('subcategory')->orderBy('category_name','asc')->get();
+    
+    
+    return view('frontend.index',compact('products','categories'));
 
-    }
+}
 
-    public function filterPrice(Request $request)
+public function filterPrice(Request $request)
 {
     // You should also add input validation here.
 
@@ -64,10 +67,17 @@ public function SubCategoryProduct($id){
     return view('frontend.index',compact('products','categories'));
 }
 
-
-public function CheckOut(){
+public function checkoutPages(){
     $payments = DB::table('payments')->get();
     return view('frontend.pages.checkout.checkout',compact('payments'));
+}
+
+public function contactPages(){
+ return view('frontend.pages.contact.contact');
+}
+
+public function aboutPages(){
+return view('frontend.pages.about.about');
 }
 
 

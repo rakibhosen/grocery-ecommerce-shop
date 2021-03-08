@@ -1,4 +1,5 @@
 @extends('frontend.layout.master')
+@section('title', 'Search product')
 @section('content')
 
 <!-- page -->

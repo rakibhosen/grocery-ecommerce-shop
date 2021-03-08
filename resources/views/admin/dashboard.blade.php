@@ -1,10 +1,10 @@
  @extends('admin.layout.admin_layout')
+ @section('title', 'Dashboard')
  @section('content')
  <nav aria-label="breadcrumb">
   <ol class="breadcrumb">
-    <li class="breadcrumb-item"><a href="#">Home</a></li>
-    <li class="breadcrumb-item"><a href="#">Library</a></li>
-    <li class="breadcrumb-item active" aria-current="page">Data</li>
+    <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
+
   </ol>
 </nav>
           <section class="content">

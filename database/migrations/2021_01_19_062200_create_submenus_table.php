@@ -16,10 +16,10 @@ class CreateSubmenusTable extends Migration
         Schema::create('submenus', function (Blueprint $table) {
             $table->id();
             $table->string('submenu_name');
-            $table->Integer('menu_id')->nullable();
-            $table->Integer('brand_id')->nullable();
-            $table->Integer('cat_id')->nullable();
-            $table->Integer('subcat_id')->nullable();
+            $table->unsignedInteger('menu_id')->nullable();
+            $table->unsignedInteger('brand_id')->nullable();
+            $table->unsignedInteger('cat_id')->nullable();
+            $table->unsignedInteger('subcat_id')->nullable();
             $table->string('submenu_url')->nullable();
              $table->string('submenu_image')->nullable();
             $table->timestamps();

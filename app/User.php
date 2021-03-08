@@ -39,6 +39,9 @@ class User extends Authenticatable
     public function district(){
         return $this->belongsTo('App\Models\District');
     }
+    public function order(){
+        return $this->hasMany('App\Models\Order');
+    }
 
 
 
